@@ -20,7 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClerkProvider>
+      <ClerkProvider
+        appearance={{
+          layout: {
+            socialButtonsVariant: "iconButton",
+          },
+        }}
+      >
         <body className={inter.className}>{children}</body>
       </ClerkProvider>
     </html>
