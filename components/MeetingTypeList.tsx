@@ -4,8 +4,8 @@
 import HomeCard from "./HomeCard";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import MeetingModal from "./MeetingModal";
 
-// import MeetingModal from './MeetingModal';
 // import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
 // import { useUser } from '@clerk/nextjs';
 // import Loader from './Loader';
@@ -19,6 +19,8 @@ import { useRouter } from "next/navigation";
 //   description: '',
 //   link: '',
 // };
+
+const createMeeting = () => {};
 
 // const MeetingTypeList = () => {
 //   const router = useRouter();
@@ -213,6 +215,12 @@ const MeetingTypeList = () => {
           description="Meeting Recordings"
           className="bg-yellow-1"
           handleClick={() => router.push("/recordings")}
+        />
+        <MeetingModal
+          isOpen={meetingState === "isInstantMeeting"}
+          onClose={() => setMeetingState(undefined)}
+          title="Create Meeting"
+          handleClick={createMeeting}
         />
       </section>
     </>
